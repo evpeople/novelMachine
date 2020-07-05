@@ -41,9 +41,6 @@ def getOnePage(url):
     hf=open("temp.txt","w+")
     hf.write(guo)
     
-    my_sender='wangzhe177@bupt.edu.cn'    # 发件人邮箱账号
-    my_pass = 'WANGzhe1414514'              # 发件人邮箱密码
-    my_user='739125772@qq.com'      # 
 
     msg=MIMEText(title+"\n\n"+guo,'plain','utf-8')
     msg['From']=formataddr(["小说机",my_sender])  # 括号里的对应发件人邮箱昵称、发件人邮箱账号
