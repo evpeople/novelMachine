@@ -1,0 +1,157 @@
+Job "tick (trigger: interval[0:15:00], next run at: 2020-07-03 00:10:18 CST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "last.py", line 122, in tick
+    getOnePage(h)
+  File "last.py", line 20, in getOnePage
+    wenzhang = wenzhang.encode("ISO-8859-1")
+UnicodeEncodeError: 'latin-1' codec can't encode characters in position 82-85: ordinal not in range(256)
+Job "tick (trigger: interval[0:15:00], next run at: 2020-07-03 21:49:35 CST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "last.py", line 127, in tick
+    getOnePage(h)
+  File "last.py", line 20, in getOnePage
+    wenzhang = wenzhang.encode("ISO-8859-1")
+UnicodeEncodeError: 'latin-1' codec can't encode characters in position 82-85: ordinal not in range(256)
+Job "tick (trigger: interval[0:15:00], next run at: 2020-07-04 01:19:35 CST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "last.py", line 118, in tick
+    h=getCatlogy(x)
+  File "last.py", line 76, in getCatlogy
+    CatLogy = CatLogy.encode("ISO-8859-1")
+UnicodeEncodeError: 'latin-1' codec can't encode characters in position 213-222: ordinal not in range(256)
+Job "tick (trigger: interval[0:15:00], next run at: 2020-07-04 01:34:35 CST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "last.py", line 127, in tick
+    getOnePage(h)
+  File "last.py", line 20, in getOnePage
+    wenzhang = wenzhang.encode("ISO-8859-1")
+UnicodeEncodeError: 'latin-1' codec can't encode characters in position 82-85: ordinal not in range(256)
+Job "tick (trigger: interval[0:15:00], next run at: 2020-07-04 08:34:35 CST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "last.py", line 118, in tick
+    h=getCatlogy(x)
+  File "last.py", line 76, in getCatlogy
+    CatLogy = CatLogy.encode("ISO-8859-1")
+UnicodeEncodeError: 'latin-1' codec can't encode characters in position 213-227: ordinal not in range(256)
+Traceback (most recent call last):
+  File "last.py", line 133, in <module>
+    sched.start()
+  File "/usr/local/lib64/python3.6/site-packages/apscheduler/schedulers/blocking.py", line 19, in start
+    self._main_loop()
+  File "/usr/local/lib64/python3.6/site-packages/apscheduler/schedulers/blocking.py", line 28, in _main_loop
+    self._event.wait(wait_seconds)
+  File "/usr/lib64/python3.6/threading.py", line 551, in wait
+    signaled = self._cond.wait(timeout)
+  File "/usr/lib64/python3.6/threading.py", line 299, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "last.py", line 133, in <module>
+    sched.start()
+  File "/usr/local/lib64/python3.6/site-packages/apscheduler/schedulers/blocking.py", line 19, in start
+    self._main_loop()
+  File "/usr/local/lib64/python3.6/site-packages/apscheduler/schedulers/blocking.py", line 28, in _main_loop
+    self._event.wait(wait_seconds)
+  File "/usr/lib64/python3.6/threading.py", line 551, in wait
+    signaled = self._cond.wait(timeout)
+  File "/usr/lib64/python3.6/threading.py", line 299, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt
+Job "tick (trigger: interval[0:15:00], next run at: 2020-07-04 22:06:06 CST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "last.py", line 127, in tick
+    getOnePage(h)
+  File "last.py", line 20, in getOnePage
+    wenzhang = wenzhang.encode("ISO-8859-1")
+UnicodeEncodeError: 'latin-1' codec can't encode characters in position 82-85: ordinal not in range(256)
+Job "tick (trigger: interval[0:15:00], next run at: 2020-07-04 23:36:06 CST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "last.py", line 127, in tick
+    getOnePage(h)
+  File "last.py", line 20, in getOnePage
+    wenzhang = wenzhang.encode("ISO-8859-1")
+UnicodeEncodeError: 'latin-1' codec can't encode characters in position 82-85: ordinal not in range(256)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 00:36:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 00:51:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 01:06:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 01:21:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 01:36:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 01:51:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 02:06:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 02:21:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 02:36:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 02:51:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 03:06:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 03:21:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 03:36:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 03:51:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 04:06:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 04:21:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 04:36:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 04:51:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 05:06:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 05:21:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 05:36:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 05:51:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 06:06:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 06:21:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 06:36:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 06:51:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 07:06:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 07:21:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 07:36:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 07:51:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 08:06:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 08:21:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 08:36:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 08:51:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 09:06:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 09:21:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 09:36:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 09:51:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 10:06:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 10:21:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 10:36:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 10:51:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 11:06:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 11:21:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 11:36:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 11:51:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 12:06:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 12:21:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 12:36:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 12:51:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 13:06:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 13:21:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 13:36:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 13:51:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 14:06:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 14:21:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 14:36:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 14:51:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 15:06:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 15:21:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 15:36:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 15:51:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 16:06:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 16:21:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 16:36:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 16:51:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 17:06:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 17:21:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 17:36:06 CST)" skipped: maximum number of running instances reached (1)
+Execution of job "tick (trigger: interval[0:15:00], next run at: 2020-07-05 17:51:06 CST)" skipped: maximum number of running instances reached (1)
