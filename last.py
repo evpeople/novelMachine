@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 import requests
 import re
-from bs4 import BeautifulSoup
 import time
+from bs4 import BeautifulSoup
 import smtplib
 from email.mime.text import MIMEText
 from email.header import Header
@@ -16,8 +16,9 @@ def getOnePage(url):
     # 下面的url是待抓取的小说页面，也就是传入的参数
     #url = "http://www.biqu6.com/23_23554/27344021.html"
     response = requests.get(url)
+    bianma = response.encoding
     wenzhang = response.text
-    wenzhang = wenzhang.encode("ISO-8859-1")
+    wenzhang=wenzhang.encode(bianma)
     wenzhang = wenzhang.decode("utf-8")
     #上面在抓取并解码，下面是形成一个满足beautifulsoup的变量
     cheng = BeautifulSoup(wenzhang, 'html.parser')
@@ -40,7 +41,7 @@ def getOnePage(url):
 
     hf=open("temp.txt","w+")
     hf.write(guo)
-    
+
 
     msg=MIMEText(title+"\n\n"+guo,'plain','utf-8')
     msg['From']=formataddr(["小说机",my_sender])  # 括号里的对应发件人邮箱昵称、发件人邮箱账号
@@ -126,5 +127,5 @@ def tick():
 
 
 sched = BlockingScheduler()
-sched.add_job(tick, 'interval', seconds=900)
+sched.add_job(tick,'interval', seconds=900,max_instances=100)
 sched.start()
