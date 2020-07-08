@@ -1,16 +1,24 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 import requests
 import re
-from bs4 import BeautifulSoup
 import time
-
+from bs4 import BeautifulSoup
+import smtplib
+from email.mime.text import MIMEText
+from email.header import Header
+from email.utils import formataddr
+import os
+from apscheduler.schedulers.blocking import BlockingScheduler
 
 def getOnePage(url):
 
     # 下面的url是待抓取的小说页面，也就是传入的参数
     #url = "http://www.biqu6.com/23_23554/27344021.html"
     response = requests.get(url)
+    bianma = response.encoding
     wenzhang = response.text
-    wenzhang = wenzhang.encode("ISO-8859-1")
+    wenzhang=wenzhang.encode(bianma)
     wenzhang = wenzhang.decode("utf-8")
     #上面在抓取并解码，下面是形成一个满足beautifulsoup的变量
     cheng = BeautifulSoup(wenzhang, 'html.parser')
@@ -30,23 +38,22 @@ def getOnePage(url):
     title = re.sub("新笔趣阁", "", title)
     title = re.sub("正文卷", "", title)
     #洗标题
-    
-    if title.find(u"有一") != -1:
-        f = open("wyyzkbw.txt","w")
-        f.write(title+"\n\n"+guo)        
-        f.close
-    elif title.find(u"师兄") != -1:
-        f = open("wsxsz.txt","w")
-        f.write(title+"\n\n"+guo)
-        f.close
-    elif title.find(u"复苏") != -1:
-        f = open("kbfs.txt","w")
-        f.write(title+"\n\n"+guo) 
-        f.close
-    elif title.find(u"首富") != -1:
-        f = open("kcsf.txt","w")
-        f.write(title+"\n\n"+guo) 
-        f.close
+
+    hf=open("temp.txt","w+")
+    hf.write(guo)
+    mySender = ""
+    myPass= ""
+    myUser= ""
+
+    msg=MIMEText(title+"\n\n"+guo,'plain','utf-8')
+    msg['From']=formataddr(["小说机",mySender])  # 括号里的对应发件人邮箱昵称、发件人邮箱账号
+    msg['To']=formataddr(["FK",myUser])              # 括号里的对应收件人邮箱昵称、收件人邮箱账号
+    msg['Subject']=title
+    server=smtplib.SMTP_SSL("smtp.exmail.qq.com", 465)
+    server.login(mySender, myPass)
+    server.sendmail(mySender,[myUser,],msg.as_string())
+    server.quit()
+
 def getCatlogy(url):
     #下面为带传入的参数
     #url = "http://www.biqu6.com/23_23554/"
@@ -66,7 +73,7 @@ def getCatlogy(url):
         d="ksf.txt"    
     response = requests.get(url)
     CatLogy = response.text
-    CatLogy = CatLogy.encode("ISO-8859-1")
+    CatLogy = CatLogy.encode("utf-8")
     CatLogy = CatLogy.decode("utf-8")
 
     
@@ -91,7 +98,6 @@ def getCatlogy(url):
     f.close
     #读取新目录页的第21行是不是更改了
     if line == linex:
-        flag = 1
         return 0
     else:
         p=r"<meta property="
@@ -104,15 +110,24 @@ def getCatlogy(url):
         #更改了则进行抓取
         return linex
 
-web = {'kbw':'http://www.biqu6.com/23_23554/','wsx':'http://www.biqu6.com/49_49868/','kbf':'http://www.biqu6.com/25_25220/','ksf':'http://www.biqu6.com/48_48213/'}
+def tick():
+    web = {'kbw':'http://www.biqu6.com/23_23554/','wsx':'http://www.biqu6.com/49_49868/','kbf':'http://www.biqu6.com/25_25220/','ksf':'http://www.biqu6.com/48_48213/'}
 
-for x in web.values():
-    time.sleep(20)
-    h=getCatlogy(x)
-    if h==0:
-        print("没更新\n")
-        continue
-    else:
-        getOnePage(h)
+    for x in web.values():
+        time.sleep(5)
+        h=getCatlogy(x)
+        if h==0:
+            fil=open("logg.txt","a+")
+            localtime = time.asctime( time.localtime(time.time()) )
+            str(localtime)
+            fil.write("没更新  \n"+localtime)
+            fil.close
+            continue
+        else:
+            getOnePage(h)
+    fil.write("\n")
 
 
+sched = BlockingScheduler()
+sched.add_job(tick,'interval', seconds=900,max_instances=100)
+sched.start()
