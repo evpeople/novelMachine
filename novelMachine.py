@@ -72,8 +72,9 @@ def getCatlogy(url):
     elif url4==url:
         d="ksf.txt"    
     response = requests.get(url)
+    bianma = response.encoding
     CatLogy = response.text
-    CatLogy = CatLogy.encode("utf-8")
+    CatLogy = CatLogy.encode(bianma)
     CatLogy = CatLogy.decode("utf-8")
 
     
@@ -114,7 +115,7 @@ def tick():
     web = {'kbw':'http://www.biqu6.com/23_23554/','wsx':'http://www.biqu6.com/49_49868/','kbf':'http://www.biqu6.com/25_25220/','ksf':'http://www.biqu6.com/48_48213/'}
 
     for x in web.values():
-        time.sleep(5)
+        time.sleep(10)
         h=getCatlogy(x)
         if h==0:
             fil=open("logg.txt","a+")
@@ -124,6 +125,7 @@ def tick():
             fil.close
             continue
         else:
+            time.sleep(120)
             getOnePage(h)
     fil.write("\n")
 
