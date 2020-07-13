@@ -113,21 +113,21 @@ def getCatlogy(url):
 
 def tick():
     web = {'kbw':'http://www.biqu6.com/23_23554/','wsx':'http://www.biqu6.com/49_49868/','kbf':'http://www.biqu6.com/25_25220/','ksf':'http://www.biqu6.com/48_48213/'}
-
+    fil=open("logg.txt","a+")
     for x in web.values():
         time.sleep(10)
         h=getCatlogy(x)
         if h==0:
-            fil=open("logg.txt","a+")
+            
             localtime = time.asctime( time.localtime(time.time()) )
             str(localtime)
-            fil.write("没更新  \n"+localtime)
-            fil.close
+            fil.write("没更新  "+localtime+"\n")
             continue
         else:
             time.sleep(120)
             getOnePage(h)
-    fil.write("\n")
+    fil.write("\n\n")
+    fil.close()
 
 
 sched = BlockingScheduler()
