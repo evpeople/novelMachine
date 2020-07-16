@@ -13,6 +13,7 @@
 
 1. 下载last.py 根据注释修改内容
 2. 在getOnePage函数中，任意位置添加如下内容
+Graphviz 
 
 >  my_sender =' ' #发件邮箱
 >  my_pass = ' ' #邮箱密码
